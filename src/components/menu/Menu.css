@@ -1,0 +1,74 @@
+.menu {
+    padding: 8% 6%;
+}
+
+.header {
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 57px;
+    line-height: 67px;
+}
+
+.headerSecond {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 22px;
+    color: #FFFFFF;
+    margin-top: 8px;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+.buttonLevel::before{
+    content: "❤"; 
+    padding-right: 20px;
+    color:#D62B2E; 
+    visibility: hidden;
+}
+
+.buttonLevel.active::before {
+    visibility: visible;
+}
+
+.buttonsLevel {
+    margin-top: 60px;
+}
+
+.buttonLevel {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 59px;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.startButton {
+    background-color: #D62B2E;
+    border: 0;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+    width: 352px;
+    height: 95px;
+    border-radius: 7px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    color: #FFFFFF;
+    margin-top: 110px;
+    cursor: pointer;
+}
