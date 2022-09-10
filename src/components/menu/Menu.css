@@ -3,36 +3,20 @@
 }
 
 .header {
-    color: #FFFFFF;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
     font-size: 57px;
-    line-height: 67px;
+    margin-bottom: 0px;
 }
 
 .headerSecond {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
     font-size: 19px;
-    line-height: 22px;
-    color: #FFFFFF;
     margin-top: 8px;
 }
 
-ul {
-    padding-left: 0;
-}
-
-li {
-    list-style-type: none;
-}
-
-.buttonLevel::before{
-    content: "❤"; 
+.buttonLevel::before {
+    content: "❤";
+    size: 20px;
     padding-right: 20px;
-    color:#D62B2E; 
+    color: #D62B2E;
     visibility: hidden;
 }
 
@@ -42,17 +26,16 @@ li {
 
 .buttonsLevel {
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .buttonLevel {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
     font-size: 50px;
     line-height: 59px;
     background: none;
     border: none;
-    color: #FFFFFF;
     cursor: pointer;
 }
 
@@ -63,12 +46,8 @@ li {
     width: 352px;
     height: 95px;
     border-radius: 7px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
     font-size: 32px;
     line-height: 38px;
-    color: #FFFFFF;
     margin-top: 110px;
     cursor: pointer;
 }

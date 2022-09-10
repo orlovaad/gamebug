@@ -5,36 +5,45 @@ interface MenuProps {
     setLevel: (level: string) => void;
 }
 
+const LEVELS = {
+    easy: 'Лёгкий',
+    medium: 'Средний',
+    hard: 'Сложный',
+}
+
 function Menu(props: MenuProps) {
-    const [state, setState] = useState({ value: '' });
+    const [state, setState] = useState({ level: '' });
+    
     const setLevel = props.setLevel;
-    const setEasy = () => {
-        setState({ value: 'easy' });
-    }
-    const setMedium = () => {
-        setState({ value: 'medium' });
-    }
-    const setHard = () => {
-        setState({ value: 'hard' });
+
+    const handleSetLevel = (level: string) => {
+        setState({ level });
     }
 
     const handleButton = () => {
-        setLevel(state.value);
-        setState({ value: '' });
+        setLevel(state.level);
+        setState({ level: '' });
     }
+
+    const buttons = Object.entries(LEVELS).map(([key, value]) => {
+        return (
+            <button
+                className={`buttonLevel ${state.level === key ? 'active' : ''}`}
+                onClick={() => handleSetLevel(key)}
+            >
+                {value}
+            </button>
+        )
+    });
 
     return (
         <div className='menu'>
             <div>
-                <header className='header'>Выберите уровень сложности:</header>
-                <p className='headerSecond'>Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт. </p>
+                <h1 className='header'>Выберите уровень сложности:</h1>
+                <h2 className='headerSecond'>Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт. </h2>
             </div>
             <div className='buttonsLevel'>
-                <ul>
-                <li><button className={`buttonLevel ${state.value === 'easy' ? 'active' : ''}`} onClick={setEasy}>Простой</button></li>
-                <li><button className={`buttonLevel ${state.value === 'medium' ? 'active' : ''}`} onClick={setMedium}>Средний</button></li>
-                <li><button className={`buttonLevel ${state.value === 'hard' ? 'active' : ''}`} onClick={setHard}>Сложный</button></li>
-                </ul>
+                {buttons}
             </div>
             <button className='startButton' onClick={handleButton}>Начать игру</button>
         </div>
