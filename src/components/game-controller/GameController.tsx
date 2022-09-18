@@ -4,6 +4,11 @@ import { CardInfo } from '../../interfaces/CardInfo';
 import { useState } from 'react';
 import { createReadStream } from 'fs';
 
+interface GameControllerState {
+    cards: CardInfo[],
+    gameState: string,
+}
+
 function generateCards(quantity: number): CardInfo[] {
     const cards: CardInfo[] = [];
     const bugCardIndex = Math.floor(Math.random() * quantity);
@@ -17,42 +22,35 @@ function generateCards(quantity: number): CardInfo[] {
 
 function GameController() {
 
-    const [state, setState] = useState({ cards: generateCards(3), gameState: 'inProcess' });
+    const [state, setState] = useState<GameControllerState>({ cards: generateCards(3), gameState: 'inProcess' });
 
     const handleClickCard = (cardInfo: CardInfo) => {
 
-        const newCards = [];
-        let gameResult = 'lose';
+        const cardState: GameControllerState = { cards: [], gameState: 'lose' }
+        const newState = state.cards.reduce((acc, card) => {
 
-        for (let i = 0; i < state.cards.length; i++) {
+            if (card === cardInfo) {
+                acc.cards.push({ isActive: true, isBug: card.isBug });
 
-            if (state.cards[i] === cardInfo) {
-                newCards.push({ isActive: true, isBug: state.cards[i].isBug });
-
-                if (state.cards[i].isBug) {
-                    gameResult = 'win';
+                if (card.isBug) {
+                    acc.gameState = 'win';
                 }
-
             } else {
-                newCards.push(state.cards[i]);
+                acc.cards.push(card);
             }
-        }
 
-        setState({
-            cards: newCards,
-            gameState: gameResult
-        });
-        
+            return acc;
+        }, cardState);
+
+        setState(newState);
     }
-
-
 
     return (
         <div className='cards'>
             {state.cards.map((card, index) => <Card key={index} cardInfo={card} clickCard={handleClickCard} />)}
+            
         </div>
     )
 }
-
 
 export default GameController;
