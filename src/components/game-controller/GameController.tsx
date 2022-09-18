@@ -2,11 +2,15 @@ import './GameController.css';
 import Card from '../card/Card';
 import { CardInfo } from '../../interfaces/CardInfo';
 import { useState } from 'react';
-import { createReadStream } from 'fs';
 
 interface GameControllerState {
     cards: CardInfo[],
     gameState: string,
+}
+
+interface GameControllerProps {
+    stopGame: () => void;
+    level: string;
 }
 
 function generateCards(quantity: number): CardInfo[] {
@@ -20,11 +24,25 @@ function generateCards(quantity: number): CardInfo[] {
     return cards;
 }
 
-function GameController() {
+const LEVELS: Record<string, number> = {
+    easy: 3,
+    medium: 6,
+    hard: 10,
+}
 
-    const [state, setState] = useState<GameControllerState>({ cards: generateCards(3), gameState: 'inProcess' });
+function GameController(props: GameControllerProps) {
+
+    const stopGame = props.stopGame;
+    const level = props.level;
+    
+    const [state, setState] = useState<GameControllerState>({ cards: generateCards(LEVELS[level] ?? 3), gameState: 'inProcess' });
 
     const handleClickCard = (cardInfo: CardInfo) => {
+
+        if (state.gameState !== 'inProcess') {
+            stopGame();
+            return;
+        }
 
         const cardState: GameControllerState = { cards: [], gameState: 'lose' }
         const newState = state.cards.reduce((acc, card) => {
@@ -48,7 +66,6 @@ function GameController() {
     return (
         <div className='cards'>
             {state.cards.map((card, index) => <Card key={index} cardInfo={card} clickCard={handleClickCard} />)}
-            
         </div>
     )
 }
