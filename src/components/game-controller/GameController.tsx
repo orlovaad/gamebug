@@ -64,7 +64,7 @@ function GameController(props: GameControllerProps) {
     }
 
     return (
-        <div className='cards'>
+        <div className={`cards ${level ==='hard' ? '-hard' : ''}`}>
             {state.cards.map((card, index) => <Card key={index} cardInfo={card} clickCard={handleClickCard} />)}
         </div>
     )

@@ -1,13 +1,16 @@
 .front {
     background-image: url("../../img/flippedCard.png");
+    background-size: cover;
 }
 
 .back {
     background-image: url("../../img/finishCard.png");
+    background-size: cover;
 }
 
 .back.-bug {
     background-image: url("../../img/bugCard.png");
+    background-size: cover;
 }
 
 /* весь контейнер поддерживает перспективу */
@@ -33,8 +36,8 @@
 .flip-container,
 .front,
 .back {
-    width: 218px;
-    height: 341px;
+    width: 150px;
+    height: 234px;
 }
 
 /* здесь находится скорость перевертывания */
