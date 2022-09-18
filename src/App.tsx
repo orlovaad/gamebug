@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import './index.css';
 import Menu from './components/menu/Menu';
-import Easy from './components/easy/Easy';
+import GameController from './components/game-controller/GameController';
+
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
   return (
     <div>
       <div className="App" >
-        <Menu setLevel={handleSetLevel}/>
+        {/* <Menu setLevel={handleSetLevel}/> */}
+        <GameController />
       </div>
     </div>
   );
