@@ -1,0 +1,10 @@
+.cards {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+}
+
+.cards.-hard {
+    grid-template-columns: repeat(5, 1fr);
+}

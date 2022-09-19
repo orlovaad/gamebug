@@ -13,7 +13,7 @@ const LEVELS = {
 
 function Menu(props: MenuProps) {
     const [state, setState] = useState({ level: '' });
-    
+
     const setLevel = props.setLevel;
 
     const handleSetLevel = (level: string) => {
@@ -28,6 +28,7 @@ function Menu(props: MenuProps) {
     const buttons = Object.entries(LEVELS).map(([key, value]) => {
         return (
             <button
+                key={key}
                 className={`buttonLevel ${state.level === key ? 'active' : ''}`}
                 onClick={() => handleSetLevel(key)}
             >
