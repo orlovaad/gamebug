@@ -7,21 +7,26 @@ import GameController from './components/game-controller/GameController';
 
 
 function App() {
-  const [state, setState] = useState({ gameState: 'chooseLevel', level: '' });
+  const [state, setState] = useState({ gameState: 'chooseLevel', level: 'easy' });
 
   const handleSetLevel = (level: string) => {
-    setState({ gameState: 'gameInProcess', level: level });
+    setState({ ...state, level: level });
   }
+
+  const handleStartGame = () => {
+    setState({ ...state, gameState: 'gameInProcess' });
+  }
+
   const handleStopGame = () => {
-    setState({ gameState: 'chooseLevel', level: '' });
+    setState({ ...state, gameState: 'chooseLevel' });
   }
 
   return (
     <div>
       <div className="App" >
         {state.gameState === 'chooseLevel'
-          ? (<Menu setLevel={handleSetLevel} />)
-          : (<GameController stopGame={handleStopGame} level={state.level}/>)
+          ? (<Menu setLevel={handleSetLevel} startGame={handleStartGame} level={state.level} />)
+          : (<GameController stopGame={handleStopGame} level={state.level} />)
         }
       </div>
     </div>

@@ -1,8 +1,9 @@
 import './Menu.css'
-import { useState } from 'react'
 
 interface MenuProps {
     setLevel: (level: string) => void;
+    startGame: () => void;
+    level: string;
 }
 
 const LEVELS = {
@@ -12,24 +13,24 @@ const LEVELS = {
 }
 
 function Menu(props: MenuProps) {
-    const [state, setState] = useState({ level: '' });
 
     const setLevel = props.setLevel;
+    const startGame = props.startGame;
+    const level = props.level;
 
     const handleSetLevel = (level: string) => {
-        setState({ level });
+        setLevel(level);
     }
 
     const handleButton = () => {
-        setLevel(state.level);
-        setState({ level: '' });
+        startGame();
     }
 
     const buttons = Object.entries(LEVELS).map(([key, value]) => {
         return (
             <button
                 key={key}
-                className={`buttonLevel ${state.level === key ? 'active' : ''}`}
+                className={`buttonLevel ${level === key ? 'active' : ''}`}
                 onClick={() => handleSetLevel(key)}
             >
                 {value}
