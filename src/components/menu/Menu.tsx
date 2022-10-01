@@ -1,37 +1,28 @@
-import './Menu.css'
+import './Menu.css';
+import { LevelsEnum } from '../enums/enums';
 
 interface MenuProps {
-    setLevel: (level: string) => void;
+    setLevel: (level: LevelsEnum) => void;
     startGame: () => void;
-    level: string;
+    level: LevelsEnum;
 }
 
 const LEVELS = {
-    easy: 'Лёгкий',
-    medium: 'Средний',
-    hard: 'Сложный',
+    [LevelsEnum.easy]: 'Лёгкий',
+    [LevelsEnum.medium]: 'Средний',
+    [LevelsEnum.hard]: 'Сложный',
 }
 
-function Menu(props: MenuProps) {
+function Menu({ setLevel, startGame, level }: MenuProps) {
 
-    const setLevel = props.setLevel;
-    const startGame = props.startGame;
-    const level = props.level;
+    const buttons = (Object.entries(LEVELS)).map(([key, value]) => {
+        const numberKey = Number(key);
 
-    const handleSetLevel = (level: string) => {
-        setLevel(level);
-    }
-
-    const handleButton = () => {
-        startGame();
-    }
-
-    const buttons = Object.entries(LEVELS).map(([key, value]) => {
         return (
             <button
                 key={key}
-                className={`buttonLevel ${level === key ? 'active' : ''}`}
-                onClick={() => handleSetLevel(key)}
+                className={`buttonLevel ${level === numberKey ? 'active' : ''}`}
+                onClick={() => setLevel(numberKey)}
             >
                 {value}
             </button>
@@ -47,7 +38,7 @@ function Menu(props: MenuProps) {
             <div className='buttonsLevel'>
                 {buttons}
             </div>
-            <button className='startButton' onClick={handleButton}>Начать игру</button>
+            <button className='startButton' onClick={startGame}>Начать игру</button>
         </div>
     );
 }

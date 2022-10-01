@@ -1,24 +1,23 @@
-import { CardInfo } from '../../interfaces/CardInfo';
+import { useState } from 'react';
+import { GameState } from '../enums/enums';
 import './Card.css'
 
 interface CardProps {
-    cardInfo: CardInfo;
-    clickCard: (cardInfo: CardInfo) => void;
+    isBug: boolean;
+    onClick: () => void;
 }
 
-function Card(props: CardProps) {
-    const cardInfo = props.cardInfo;
-    const isBug = cardInfo.isBug;
-    const isActive = cardInfo.isActive;
-    const clickCard = props.clickCard;
+function Card({ isBug, onClick }: CardProps) {
+
+    const [state, setState] = useState({ isActive: false });
 
     const handleClick = () => {
-        clickCard(cardInfo);
+        setState({ isActive: true });
+        onClick();
     }
 
-
     return (
-        <div className={`flip-container ${isActive ? '-active' : ''}`} onClick={handleClick}>
+        <div className={`flip-container ${state.isActive ? '-active' : ''}`} onClick={handleClick}>
             <div className="flipper" >
                 <div className="front">
                 </div>

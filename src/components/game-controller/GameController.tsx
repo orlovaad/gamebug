@@ -1,71 +1,51 @@
 import './GameController.css';
 import Card from '../card/Card';
-import { CardInfo } from '../../interfaces/CardInfo';
 import { useState } from 'react';
-
-interface GameControllerState {
-    cards: CardInfo[],
-    gameState: string,
-}
+import { GameState, LevelsEnum } from '../enums/enums';
 
 interface GameControllerProps {
     stopGame: () => void;
-    level: string;
+    finishGame: () => void;
+    gameState: GameState;
+    level: LevelsEnum;
 }
 
-function generateCards(quantity: number): CardInfo[] {
-    const cards: CardInfo[] = [];
-    const bugCardIndex = Math.floor(Math.random() * quantity);
+const LEVELS: Record<LevelsEnum, number> = {
+    [LevelsEnum.easy]: 3,
+    [LevelsEnum.medium]: 6,
+    [LevelsEnum.hard]: 10,
+}
 
-    for (let i = 0; i < quantity; i++) {
-        cards.push({ isActive: false, isBug: bugCardIndex === i });
+function generateBugIndex(quantity: number): number {
+    return Math.floor(Math.random() * quantity);
+}
+
+function GameController({ stopGame, finishGame, level, gameState }: GameControllerProps) {
+
+    const bugIndex = generateBugIndex(LEVELS[level]);
+
+    const handleClickCard = () => {
+        if (gameState === GameState.gameFinished) {
+            stopGame();
+        } else {
+            finishGame();
+        }
     }
 
-    return cards;
-}
+    const printCards = () => {
 
-const LEVELS: Record<string, number> = {
-    easy: 3,
-    medium: 6,
-    hard: 10,
-}
+        const cards = Array(LEVELS[level]);
 
-function GameController(props: GameControllerProps) {
-
-    const stopGame = props.stopGame;
-    const level = props.level;
-    
-    const [state, setState] = useState<GameControllerState>({ cards: generateCards(LEVELS[level] ?? 3), gameState: 'inProcess' });
-
-    const handleClickCard = (cardInfo: CardInfo) => {
-
-        if (state.gameState !== 'inProcess') {
-            stopGame();
-            return;
+        for (let i = 0; i < LEVELS[level]; i++) {
+            cards[i] = <Card key={i} isBug={i === bugIndex} onClick={handleClickCard} />
         }
 
-        const cardState: GameControllerState = { cards: [], gameState: 'lose' }
-        const newState = state.cards.reduce((acc, card) => {
-
-            if (card === cardInfo) {
-                acc.cards.push({ isActive: true, isBug: card.isBug });
-
-                if (card.isBug) {
-                    acc.gameState = 'win';
-                }
-            } else {
-                acc.cards.push(card);
-            }
-
-            return acc;
-        }, cardState);
-
-        setState(newState);
+        return cards;
     }
 
     return (
-        <div className={`cards ${level ==='hard' ? '-hard' : ''}`}>
-            {state.cards.map((card, index) => <Card key={index} cardInfo={card} clickCard={handleClickCard} />)}
+        <div className={`cards ${level === LevelsEnum.hard ? '-hard' : ''}`}>
+            {printCards()}
         </div>
     )
 }
