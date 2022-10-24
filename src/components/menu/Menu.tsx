@@ -8,7 +8,7 @@ interface MenuProps {
 }
 
 const LEVELS = {
-    [LevelsEnum.easy]: 'Лёгкий',
+    [LevelsEnum.easy]: 'Простой',
     [LevelsEnum.medium]: 'Средний',
     [LevelsEnum.hard]: 'Сложный',
 }
@@ -33,12 +33,18 @@ function Menu({ setLevel, startGame, level }: MenuProps) {
         <div className='menu'>
             <div>
                 <h1 className='header'>Выберите уровень сложности:</h1>
-                <h2 className='headerSecond'>Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт. </h2>
+                <h2 className='description'>Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт. </h2>
             </div>
             <div className='buttonsLevel'>
                 {buttons}
             </div>
             <button className='startButton' onClick={startGame}>Начать игру</button>
+            <div className='menuCards'>
+                <div className='menuCard'>
+                </div>
+                <div className='menuCard moreRotated'>
+                </div>
+            </div>
         </div>
     );
 }

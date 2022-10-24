@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { GameState } from '../enums/enums';
 import './Card.css'
 
 interface CardProps {
@@ -17,11 +16,11 @@ function Card({ isBug, onClick }: CardProps) {
     }
 
     return (
-        <div className={`flip-container ${state.isActive ? '-active' : ''}`} onClick={handleClick}>
+        <div className={`flip-container ${state.isActive ? 'active' : ''}`} onClick={handleClick}>
             <div className="flipper" >
                 <div className="front">
                 </div>
-                <div className={`back ${isBug ? '-bug' : ''}`}>
+                <div className={`back ${isBug ? 'bug' : ''}`}>
                 </div>
             </div>
         </div>

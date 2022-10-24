@@ -1,5 +1,6 @@
 .menu {
-    padding: 8% 6%;
+    padding: 103px;
+    padding-top: 0;
 }
 
 .header {
@@ -7,13 +8,14 @@
     margin-bottom: 0px;
 }
 
-.headerSecond {
-    font-size: 19px;
+.description {
+    font-size: 20px;
+    font-weight: 400;
     margin-top: 8px;
 }
 
 .buttonLevel::before {
-    content: "❤";
+    content: "⬥";
     size: 20px;
     padding-right: 20px;
     color: #D62B2E;
@@ -25,7 +27,7 @@
 }
 
 .buttonsLevel {
-    margin-top: 60px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -34,6 +36,8 @@
 .buttonLevel {
     font-size: 50px;
     line-height: 59px;
+    margin-top: 20px;
+    letter-spacing: 1px;
     background: none;
     border: none;
     cursor: pointer;
@@ -46,8 +50,107 @@
     width: 352px;
     height: 95px;
     border-radius: 7px;
+    letter-spacing: 1px;
     font-size: 32px;
     line-height: 38px;
     margin-top: 110px;
     cursor: pointer;
+}
+
+.menuCards {
+    position: absolute;
+    display: flex;
+    left: 750px;
+    top: 512px;
+}
+
+.menuCard {
+    background-image: url("../../img/flippedCard.png");
+    margin-right: -30px;
+    width: 218px;
+    height: 341px;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+    transform: rotate(11.9deg);
+}
+
+.moreRotated {
+    margin-top: 40px;
+    transform: rotate(39.26deg);
+}
+
+@media only screen and (min-width:1100px) and (max-width: 1300px) {
+    .menuCards {
+        left: 550px;
+    }
+}
+
+@media only screen and (min-width:850px) and (max-width: 1100px) {
+    .menuCard {
+        width: 153px;
+        height: 239px;
+        background-size: cover;
+    }
+
+    .menuCards {
+        left: 500px;
+    }
+}
+
+
+@media only screen and (min-width:400px) and (max-width: 850px) {
+    .menu {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menuCards {
+        display: none;
+    }
+
+    .buttonsLevel {
+        margin-right: 100px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .menu {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header {
+        font-size: 25px;
+    }
+
+    .buttonLevel {
+        font-size: 25px;
+        line-height: normal;
+        margin-top: 0px;
+    }
+
+    .startButton {
+        width: 246px;
+        height: 66px;
+        margin-top: 80px;
+    }
+
+    .description {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .menuCards {
+        visibility: hidden;
+    }
+    .startButton {
+        width: 247px;
+        height: 66px;
+        font-size: 20px;
+        line-height: 20px;
+        margin-top: 90px;
+    }
 }
