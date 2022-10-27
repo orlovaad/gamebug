@@ -1,11 +1,11 @@
 export enum GameState {
-    chooseLevel,
-    gameInProcess,
-    gameFinished,
+  chooseLevel,
+  gameInProcess,
+  gameFinished,
 }
 
 export enum LevelsEnum {
-    easy,
-    medium,
-    hard,
+  easy,
+  medium,
+  hard,
 }

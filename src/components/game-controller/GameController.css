@@ -1,20 +1,10 @@
 .cards {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 0 auto;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
 }
 
 .cards.-hard {
-    grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
-
-@media only screen and (min-width:850px) and (max-width: 1300px) {
-    .cards.-hard {
-        width: 30px;
-    }
-}
-
-@media only screen and (min-width:400px) and (max-width: 850px) {}
-
-@media only screen and (max-width: 400px) {}

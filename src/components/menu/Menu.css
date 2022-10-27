@@ -1,156 +1,155 @@
 .menu {
-    padding: 103px;
-    padding-top: 0;
+  padding: 103px;
+  padding-top: 0;
 }
 
 .header {
-    font-size: 57px;
-    margin-bottom: 0px;
+  font-size: 57px;
+  margin-bottom: 0px;
 }
 
 .description {
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 8px;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 8px;
 }
 
 .buttonLevel::before {
-    content: "⬥";
-    size: 20px;
-    padding-right: 20px;
-    color: #D62B2E;
-    visibility: hidden;
+  content: '⬥';
+  size: 20px;
+  padding-right: 20px;
+  color: #d62b2e;
+  visibility: hidden;
 }
 
 .buttonLevel.active::before {
-    visibility: visible;
+  visibility: visible;
 }
 
 .buttonsLevel {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .buttonLevel {
-    font-size: 50px;
-    line-height: 59px;
-    margin-top: 20px;
-    letter-spacing: 1px;
-    background: none;
-    border: none;
-    cursor: pointer;
+  font-size: 50px;
+  line-height: 59px;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .startButton {
-    background-color: #D62B2E;
-    border: 0;
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-    width: 352px;
-    height: 95px;
-    border-radius: 7px;
-    letter-spacing: 1px;
-    font-size: 32px;
-    line-height: 38px;
-    margin-top: 110px;
-    cursor: pointer;
+  background-color: #d62b2e;
+  border: 0;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+  width: 352px;
+  height: 95px;
+  border-radius: 7px;
+  letter-spacing: 1px;
+  font-size: 32px;
+  line-height: 38px;
+  margin-top: 110px;
+  cursor: pointer;
 }
 
 .menuCards {
-    position: absolute;
-    display: flex;
-    left: 750px;
-    top: 512px;
+  position: absolute;
+  display: flex;
+  left: 750px;
+  top: 400px;
 }
 
 .menuCard {
-    background-image: url("../../img/flippedCard.png");
-    margin-right: -30px;
-    width: 218px;
-    height: 341px;
-    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
-    transform: rotate(11.9deg);
+  background-image: url('../../img/flippedCard.png');
+  margin-right: -30px;
+  width: 218px;
+  height: 341px;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+  transform: rotate(11.9deg);
 }
 
 .moreRotated {
-    margin-top: 40px;
-    transform: rotate(39.26deg);
+  margin-top: 40px;
+  transform: rotate(39.26deg);
 }
 
-@media only screen and (min-width:1100px) and (max-width: 1300px) {
-    .menuCards {
-        left: 550px;
-    }
+@media only screen and (min-width: 1100px) and (max-width: 1300px) {
+  .menuCards {
+    left: 550px;
+  }
 }
 
-@media only screen and (min-width:850px) and (max-width: 1100px) {
-    .menuCard {
-        width: 153px;
-        height: 239px;
-        background-size: cover;
-    }
+@media only screen and (min-width: 850px) and (max-width: 1100px) {
+  .menuCard {
+    width: 153px;
+    height: 239px;
+    background-size: cover;
+  }
 
-    .menuCards {
-        left: 500px;
-    }
+  .menuCards {
+    left: 500px;
+  }
 }
 
+@media only screen and (min-width: 400px) and (max-width: 850px) {
+  .menu {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 
-@media only screen and (min-width:400px) and (max-width: 850px) {
-    .menu {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
+  .menuCards {
+    display: none;
+  }
 
-    .menuCards {
-        display: none;
-    }
-
-    .buttonsLevel {
-        margin-right: 100px;
-    }
+  .buttonsLevel {
+    margin-right: 100px;
+  }
 }
 
 @media only screen and (max-width: 400px) {
-    .menu {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
+  .menu {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .header {
-        font-size: 25px;
-    }
+  .header {
+    font-size: 25px;
+  }
 
-    .buttonLevel {
-        font-size: 25px;
-        line-height: normal;
-        margin-top: 0px;
-    }
+  .buttonLevel {
+    font-size: 25px;
+    line-height: normal;
+    margin-top: 0px;
+  }
 
-    .startButton {
-        width: 246px;
-        height: 66px;
-        margin-top: 80px;
-    }
+  .startButton {
+    width: 246px;
+    height: 66px;
+    margin-top: 80px;
+  }
 
-    .description {
-        font-size: 14px;
-        margin-top: 20px;
-    }
+  .description {
+    font-size: 14px;
+    margin-top: 20px;
+  }
 
-    .menuCards {
-        visibility: hidden;
-    }
-    .startButton {
-        width: 247px;
-        height: 66px;
-        font-size: 20px;
-        line-height: 20px;
-        margin-top: 90px;
-    }
+  .menuCards {
+    visibility: hidden;
+  }
+  .startButton {
+    width: 247px;
+    height: 66px;
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 90px;
+  }
 }

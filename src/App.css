@@ -1,13 +1,13 @@
 .App {
-    background-image: url("./img/Background.png");  
-    height: 100vh; 
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
+  /* background-image: url('./img/Background.png'); */
+  background-color: #4aa078;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 .cards {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
-

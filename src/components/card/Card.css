@@ -1,104 +1,99 @@
 .front {
-    background-image: url("../../img/flippedCard.png");
-    background-size: cover;
+  background-image: url('../../img/flippedCard.png');
+  background-size: cover;
 }
 
 .back {
-    background-image: url("../../img/finishCard.png");
-    background-size: cover;
+  background-image: url('../../img/finishCard.png');
+  background-size: cover;
 }
 
 .back.bug {
-    background-image: url("../../img/bugCard.png");
-    background-size: cover;
+  background-image: url('../../img/bugCard.png');
+  background-size: cover;
 }
 
 /* переверните сторону при проведении мышью */
 .flip-container.active .flipper,
 .flip-container.active .flipper:hover {
-    transform: rotateY(180deg);
-    cursor: pointer;
+  transform: rotateY(180deg);
+  cursor: pointer;
 }
 
 .flip-container:hover .flipper,
 .flip-container.hover .flipper:hover {
-    transform: translateY(-20px);
-    cursor: pointer;
+  transform: translateY(-20px);
+  cursor: pointer;
 }
 
 .front:hover {
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .flip-container,
 .front,
 .back {
-    width: 218px;
-    height: 341px;
+  width: 218px;
+  height: 341px;
 }
 
 /* здесь находится скорость перевертывания */
 .flipper {
-    transition: 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
 }
 
 /* скройте обратную сторону во время переворота */
 .front,
 .back {
-    backface-visibility: hidden;
-    position: absolute;
+  backface-visibility: hidden;
+  position: absolute;
 }
 
 /* лицевая сторона размещена над обратной */
 .front {
-    z-index: 2;
+  z-index: 2;
 }
 
 /* обратная, изначально скрытая сторона */
 .back {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
-
-@media only screen and (min-width:1100px) and (max-width: 1300px) {
-
-    .flip-container,
-    .front,
-    .back {
-        width: 173px;
-        height: 273px;
-    }
+@media (max-width: 1280px) {
+  .flip-container,
+  .front,
+  .back {
+    width: 173px;
+    height: 273px;
+  }
 }
 
-@media only screen and (min-width:850px) and (max-width: 1100px) {
-
-    .flip-container,
-    .front,
-    .back {
-        width: 131px;
-        height: 206px;
-    }
+@media (max-width: 1024px) {
+  .flip-container,
+  .front,
+  .back {
+    width: 131px;
+    height: 206px;
+  }
 }
 
-@media only screen and (min-width:650px) and (max-width: 850px) {
-
-    .flip-container,
-    .front,
-    .back {
-        width: 100px;
-        height: 158px;
-    }
+@media (max-width: 768px) {
+  .flip-container,
+  .front,
+  .back {
+    width: 100px;
+    height: 158px;
+  }
 }
 
-
-@media only screen and (max-width: 650px) {
-    .flip-container,
-    .front,
-    .back {
-        width: 46px;
-        height: 73px;
-    }
+@media (max-width: 650px) {
+  .flip-container,
+  .front,
+  .back {
+    width: 46px;
+    height: 73px;
+  }
 }
