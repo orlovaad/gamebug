@@ -1,10 +1,28 @@
 .cards {
   display: grid;
-  gap: 30px;
   grid-template-columns: repeat(3, 1fr);
-  margin: 0 auto;
+  justify-items: center;
+  overflow-y: scroll;
 }
 
 .cards.-hard {
   grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 1280px) {
+  .cards.-hard {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 640px) {
+  .cards.-hard {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

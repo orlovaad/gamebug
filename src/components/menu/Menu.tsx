@@ -36,14 +36,16 @@ function Menu({ setLevel, startGame, level }: MenuProps) {
           Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт.{' '}
         </h2>
       </div>
-      <div className="buttonsLevel">{buttons}</div>
+      <div className="buttonsLevel">
+        {buttons}
+        <div className="menuCards">
+          <div className="menuCard"></div>
+          <div className="menuCard moreRotated"></div>
+        </div>
+      </div>
       <button className="startButton" onClick={startGame}>
         Начать игру
       </button>
-      <div className="menuCards">
-        <div className="menuCard"></div>
-        <div className="menuCard moreRotated"></div>
-      </div>
     </div>
   );
 }

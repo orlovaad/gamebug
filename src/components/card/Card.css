@@ -36,6 +36,7 @@
 .back {
   width: 218px;
   height: 341px;
+  margin: 20px 0;
 }
 
 /* здесь находится скорость перевертывания */
@@ -66,8 +67,8 @@
   .flip-container,
   .front,
   .back {
-    width: 173px;
-    height: 273px;
+    width: 240px;
+    height: 375px;
   }
 }
 
@@ -75,8 +76,8 @@
   .flip-container,
   .front,
   .back {
-    width: 131px;
-    height: 206px;
+    width: 230px;
+    height: 360px;
   }
 }
 
@@ -84,16 +85,16 @@
   .flip-container,
   .front,
   .back {
-    width: 100px;
-    height: 158px;
+    width: 190px;
+    height: 300px;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 640px) {
   .flip-container,
   .front,
   .back {
-    width: 46px;
-    height: 73px;
+    width: 112px;
+    height: 176px;
   }
 }

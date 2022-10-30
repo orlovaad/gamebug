@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .menu {
   padding: 103px;
   padding-top: 0;
 }
 
 .header {
+  font-family: Roboto;
   font-size: 57px;
   margin-bottom: 0px;
 }
@@ -60,8 +63,7 @@
 .menuCards {
   position: absolute;
   display: flex;
-  left: 750px;
-  top: 400px;
+  right: 200px;
 }
 
 .menuCard {
@@ -78,25 +80,26 @@
   transform: rotate(39.26deg);
 }
 
-@media only screen and (min-width: 1100px) and (max-width: 1300px) {
-  .menuCards {
-    left: 550px;
-  }
-}
-
-@media only screen and (min-width: 850px) and (max-width: 1100px) {
+@media (max-width: 1024px) {
   .menuCard {
-    width: 153px;
-    height: 239px;
+    width: 183px;
+    height: 286px;
     background-size: cover;
   }
-
-  .menuCards {
-    left: 500px;
+  .moreRotated {
+    display: none;
   }
 }
 
-@media only screen and (min-width: 400px) and (max-width: 850px) {
+@media (max-width: 768px) {
+  .header {
+    font-size: 30px;
+    margin-top: 50px;
+  }
+  .description {
+    font-size: 15px;
+  }
+
   .menu {
     align-items: center;
     display: flex;
@@ -110,10 +113,23 @@
 
   .buttonsLevel {
     margin-right: 100px;
+    font-size: 30px;
+  }
+  .buttonLevel {
+    width: 352px;
+    height: 95px;
+    font-size: 30px;
+    height: 40px;
+  }
+
+  .startButton {
+    font-size: 30px;
+    width: 282px;
+    height: 76px;
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media (max-width: 640px) {
   .menu {
     align-items: center;
     display: flex;
@@ -122,19 +138,23 @@
   }
 
   .header {
+    margin-top: 100px;
     font-size: 25px;
+  }
+  .buttonsLevel {
+    margin-left: 30px;
   }
 
   .buttonLevel {
     font-size: 25px;
-    line-height: normal;
     margin-top: 0px;
+    height: 40px;
   }
 
   .startButton {
     width: 246px;
     height: 66px;
-    margin-top: 80px;
+    margin-top: 60px;
   }
 
   .description {
