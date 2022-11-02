@@ -1,11 +1,11 @@
 import './GameController.css';
 import Card from '../card/Card';
-import { GameState, LevelsEnum } from '../enums/enums';
+import { GameStateEnum, LevelsEnum } from '../../types/enums/enums';
 
 interface GameControllerProps {
   stopGame: () => void;
   finishGame: () => void;
-  gameState: GameState;
+  gameState: GameStateEnum;
   level: LevelsEnum;
 }
 
@@ -23,7 +23,7 @@ function GameController({ stopGame, finishGame, level, gameState }: GameControll
   const bugIndex = generateBugIndex(LEVELS[level]);
 
   const handleClickCard = () => {
-    if (gameState === GameState.gameFinished) {
+    if (gameState === GameStateEnum.gameFinished) {
       stopGame();
     } else {
       finishGame();

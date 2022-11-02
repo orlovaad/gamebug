@@ -1,5 +1,5 @@
 import './Menu.css';
-import { LevelsEnum } from '../enums/enums';
+import { LevelsEnum } from '../../types/enums/enums';
 
 interface MenuProps {
   setLevel: (level: LevelsEnum) => void;
@@ -33,7 +33,7 @@ function Menu({ setLevel, startGame, level }: MenuProps) {
       <div>
         <h1 className="header">Выберите уровень сложности:</h1>
         <h2 className="description">
-          Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт.{' '}
+          Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт.
         </h2>
       </div>
       <div className="buttonsLevel">

@@ -1,6 +1,4 @@
 .App {
-  /* background-image: url('./img/Background.png'); */
-  background-color: #4aa078;
   height: 100vh;
   display: flex;
   justify-content: space-around;

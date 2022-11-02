@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 .menu {
   padding: 103px;
   padding-top: 0;
 }
 
 .header {
-  font-family: Roboto;
   font-size: 57px;
   margin-bottom: 0px;
 }

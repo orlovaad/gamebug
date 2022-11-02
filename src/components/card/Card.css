@@ -10,7 +10,6 @@
 
 .back.bug {
   background-image: url('../../img/bugCard.png');
-  background-size: cover;
 }
 
 /* переверните сторону при проведении мышью */
