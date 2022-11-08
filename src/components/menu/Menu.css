@@ -1,17 +1,23 @@
 .menu {
-  padding: 103px;
-  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
 }
 
 .header {
   font-size: 57px;
-  margin-bottom: 0px;
 }
 
 .description {
   font-size: 20px;
   font-weight: 400;
-  margin-top: 8px;
+}
+
+.buttonsLevel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .buttonLevel::before {
@@ -24,13 +30,6 @@
 
 .buttonLevel.active::before {
   visibility: visible;
-}
-
-.buttonsLevel {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .buttonLevel {
@@ -47,20 +46,19 @@
   background-color: #d62b2e;
   border: 0;
   box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-  width: 352px;
-  height: 95px;
   border-radius: 7px;
   letter-spacing: 1px;
   font-size: 32px;
   line-height: 38px;
-  margin-top: 110px;
+  padding: 26px 80px;
   cursor: pointer;
 }
 
-.menuCards {
+.menuCardsContainer {
   position: absolute;
   display: flex;
-  right: 200px;
+  margin-left: 400px;
+  margin-top: 200px;
 }
 
 .menuCard {
@@ -77,96 +75,36 @@
   transform: rotate(39.26deg);
 }
 
-@media (max-width: 1024px) {
-  .menuCard {
-    width: 183px;
-    height: 286px;
-    background-size: cover;
-  }
-  .moreRotated {
-    display: none;
-  }
-}
-
 @media (max-width: 768px) {
-  .header {
-    font-size: 30px;
-    margin-top: 50px;
+  .menu {
+    text-align: center;
+    align-items: center;
   }
+
+  .header {
+    font-size: 32px;
+  }
+
   .description {
     font-size: 15px;
   }
 
-  .menu {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  .buttonLevel {
+    font-size: 32px;
   }
 
-  .menuCards {
+  .startButtonContainer {
+    width: 100%;
+    display: flex;
+  }
+
+  .startButton {
+    font-size: 30px;
+    padding: 15px 20px;
+    flex: 1;
+  }
+
+  .menuCardsContainer {
     display: none;
-  }
-
-  .buttonsLevel {
-    margin-right: 100px;
-    font-size: 30px;
-  }
-  .buttonLevel {
-    width: 352px;
-    height: 95px;
-    font-size: 30px;
-    height: 40px;
-  }
-
-  .startButton {
-    font-size: 30px;
-    width: 282px;
-    height: 76px;
-  }
-}
-
-@media (max-width: 640px) {
-  .menu {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header {
-    margin-top: 100px;
-    font-size: 25px;
-  }
-  .buttonsLevel {
-    margin-left: 30px;
-  }
-
-  .buttonLevel {
-    font-size: 25px;
-    margin-top: 0px;
-    height: 40px;
-  }
-
-  .startButton {
-    width: 246px;
-    height: 66px;
-    margin-top: 60px;
-  }
-
-  .description {
-    font-size: 14px;
-    margin-top: 20px;
-  }
-
-  .menuCards {
-    visibility: hidden;
-  }
-  .startButton {
-    width: 247px;
-    height: 66px;
-    font-size: 20px;
-    line-height: 20px;
-    margin-top: 90px;
   }
 }
