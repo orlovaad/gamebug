@@ -34,13 +34,14 @@ function GameController({ stopGame, finishGame, level, gameState }: GameControll
     const cards = Array(LEVELS[level]);
 
     for (let i = 0; i < LEVELS[level]; i++) {
-      cards[i] = <Card key={i} isBug={i === bugIndex} onClick={handleClickCard} />;
+      // cards[i] = <Card key={i} isBug={i === bugIndex} onClick={handleClickCard} />;
+      cards[i] = <div key={i} className="newCard" />;
     }
 
     return cards;
   };
 
-  return <div className={`cards ${level === LevelsEnum.hard ? '-hard' : ''}`}>{printCards()}</div>;
+  return <div className={`cards -${level}`}>{printCards()}</div>;
 }
 
 export default GameController;

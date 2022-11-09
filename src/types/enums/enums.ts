@@ -5,7 +5,7 @@ export enum GameStateEnum {
 }
 
 export enum LevelsEnum {
-  easy,
-  medium,
-  hard,
+  easy = 'easy',
+  medium = 'medium',
+  hard = 'hard',
 }

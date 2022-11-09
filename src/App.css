@@ -1,11 +1,6 @@
 .App {
   height: 100vh;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.cards {
-  display: flex;
-  justify-content: space-around;
+  width: min(100% - 40px, 1024px);
+  margin-inline: auto;
 }

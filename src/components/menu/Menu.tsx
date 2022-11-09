@@ -15,13 +15,11 @@ const LEVELS = {
 
 function Menu({ setLevel, startGame, level }: MenuProps) {
   const buttons = Object.entries(LEVELS).map(([key, value]) => {
-    const numberKey = Number(key);
-
     return (
       <button
         key={key}
-        className={`buttonLevel ${level === numberKey ? 'active' : ''}`}
-        onClick={() => setLevel(numberKey)}
+        className={`buttonLevel ${level === key ? 'active' : ''}`}
+        onClick={() => setLevel(key as LevelsEnum)}
       >
         {value}
       </button>
