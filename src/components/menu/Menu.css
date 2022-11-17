@@ -62,7 +62,7 @@
 }
 
 .menuCard {
-  background-image: url('../../img/flippedCard.png');
+  background-image: url('../../../public/img/flippedCard.png');
   margin-right: -30px;
   width: 218px;
   height: 341px;

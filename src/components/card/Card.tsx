@@ -17,8 +17,8 @@ function Card({ isBug, onClick }: CardProps) {
   return (
     <div className={`flip-container ${state.isActive ? 'active' : ''}`} onClick={handleClick}>
       <div className="flipper">
-        <div className="front"></div>
-        <div className={`back ${isBug ? 'bug' : ''}`}></div>
+        <img src="img/flippedCard.png" alt="front" className="front" />
+        <img src={isBug ? 'img/bugCard.png' : 'img/finishCard.png'} alt="back" className="back" />
       </div>
     </div>
   );

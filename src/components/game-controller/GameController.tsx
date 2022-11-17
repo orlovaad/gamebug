@@ -34,8 +34,7 @@ function GameController({ stopGame, finishGame, level, gameState }: GameControll
     const cards = Array(LEVELS[level]);
 
     for (let i = 0; i < LEVELS[level]; i++) {
-      // cards[i] = <Card key={i} isBug={i === bugIndex} onClick={handleClickCard} />;
-      cards[i] = <div key={i} className="newCard" />;
+      cards[i] = <Card key={i} isBug={i === bugIndex} onClick={handleClickCard} />;
     }
 
     return cards;

@@ -3,8 +3,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-  padding-bottom: 10%;
-  max-height: 341px;
   margin: auto;
 }
 
@@ -12,18 +10,9 @@
   grid-template-columns: repeat(5, 1fr);
 }
 
-.newCard {
-  padding-bottom: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url('../../img/flippedCard.png');
-  background-position: center center;
-}
-
 @media (max-width: 640px) {
   .cards {
     grid-template-columns: 1fr;
-    margin: 30px auto;
   }
 
   .cards.-easy {
@@ -33,19 +22,10 @@
   .cards.-medium {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  .newCard {
-    padding-bottom: 44%;
-  }
 }
 
 @media (max-width: 425px) {
   .cards.-hard {
     grid-template-columns: repeat(2, 1fr);
-    margin: 40px auto;
-  }
-
-  .newCard {
-    padding-bottom: 48%;
   }
 }
