@@ -17,6 +17,7 @@
 
   .cards.-easy {
     grid-gap: 20px;
+    margin: 20px;
   }
 
   .cards.-medium {
@@ -27,5 +28,6 @@
 @media (max-width: 425px) {
   .cards.-hard {
     grid-template-columns: repeat(2, 1fr);
+    margin: 20px;
   }
 }

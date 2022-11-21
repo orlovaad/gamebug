@@ -20,6 +20,8 @@
   display: flex;
   position: relative;
   justify-content: center;
+  max-width: 150px;
+  justify-self: center;
 }
 
 .front,
