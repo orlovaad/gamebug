@@ -1,17 +1,12 @@
-body  {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  background-color: #4aa078;
 }
 
 * {
-  font-family: 'Roboto';
-  font-style: normal;
+  color: #ffffff;
   font-weight: 700;
-  color: #FFFFFF;
+  font-family: Roboto;
 }

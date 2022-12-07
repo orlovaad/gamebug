@@ -1,65 +1,59 @@
-.front {
-    background-image: url("../../img/flippedCard.png");
-    background-size: cover;
-}
-
-.back {
-    background-image: url("../../img/finishCard.png");
-    background-size: cover;
-}
-
-.back.-bug {
-    background-image: url("../../img/bugCard.png");
-    background-size: cover;
-}
-
-/* весь контейнер поддерживает перспективу */
-.flip-container {
-    perspective: 1000;
-}
-
 /* переверните сторону при проведении мышью */
-.flip-container.-active .flipper,
-.flip-container.-active .flipper:hover {
-    transform: rotateY(180deg);
+.flip-container.active .flipper,
+.flip-container.active .flipper:hover {
+  transform: rotateY(180deg);
+  cursor: pointer;
 }
 
 .flip-container:hover .flipper,
 .flip-container.hover .flipper:hover {
-    transform: translateY(-20px);
+  transform: translateY(-20px);
+  cursor: pointer;
 }
 
 .front:hover {
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
-.flip-container,
+.flip-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  max-width: 150px;
+  justify-self: center;
+}
+
 .front,
 .back {
-    width: 150px;
-    height: 234px;
+  max-width: 100%;
+  height: auto;
 }
 
 /* здесь находится скорость перевертывания */
 .flipper {
-    transition: 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  display: flex;
 }
 
 /* скройте обратную сторону во время переворота */
-.front,
+.front {
+  backface-visibility: hidden;
+}
+
 .back {
-    backface-visibility: hidden;
-    position: absolute;
+  backface-visibility: hidden;
+  position: absolute;
 }
 
 /* лицевая сторона размещена над обратной */
 .front {
-    z-index: 2;
+  z-index: 2;
 }
 
 /* обратная, изначально скрытая сторона */
 .back {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
