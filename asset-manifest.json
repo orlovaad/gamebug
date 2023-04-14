@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.80374efe.css",
+    "main.js": "/static/js/main.a39a31eb.js",
+    "static/js/787.b0ca5352.chunk.js": "/static/js/787.b0ca5352.chunk.js",
+    "static/media/flippedCard.png": "/static/media/flippedCard.738e5e907c0f8fdad312.png",
+    "index.html": "/index.html",
+    "main.80374efe.css.map": "/static/css/main.80374efe.css.map",
+    "main.a39a31eb.js.map": "/static/js/main.a39a31eb.js.map",
+    "787.b0ca5352.chunk.js.map": "/static/js/787.b0ca5352.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80374efe.css",
+    "static/js/main.a39a31eb.js"
+  ]
+}
