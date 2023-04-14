@@ -1,33 +1,27 @@
-import { CardInfo } from '../../interfaces/CardInfo';
-import './Card.css'
+import { useState } from 'react';
+import './Card.css';
 
 interface CardProps {
-    cardInfo: CardInfo;
-    clickCard: (cardInfo: CardInfo) => void;
+  isBug: boolean;
+  onClick: () => void;
 }
 
-function Card(props: CardProps) {
-    const cardInfo = props.cardInfo;
-    const isBug = cardInfo.isBug;
-    const isActive = cardInfo.isActive;
-    const clickCard = props.clickCard;
+function Card({ isBug, onClick }: CardProps) {
+  const [state, setState] = useState({ isActive: false });
 
-    const handleClick = () => {
-        clickCard(cardInfo);
-    }
+  const handleClick = () => {
+    setState({ isActive: true });
+    onClick();
+  };
 
-
-    return (
-        <div className={`flip-container ${isActive ? '-active' : ''}`} onClick={handleClick}>
-            <div className="flipper" >
-                <div className="front">
-                </div>
-                <div className={`back ${isBug ? '-bug' : ''}`}>
-                </div>
-            </div>
-        </div>
-    )
-
+  return (
+    <div className={`flip-container ${state.isActive ? 'active' : ''}`} onClick={handleClick}>
+      <div className="flipper">
+        <img src="img/flippedCard.png" alt="front" className="front" />
+        <img src={isBug ? 'img/bugCard.png' : 'img/finishCard.png'} alt="back" className="back" />
+      </div>
+    </div>
+  );
 }
 
 export default Card;

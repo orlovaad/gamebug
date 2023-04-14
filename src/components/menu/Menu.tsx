@@ -1,54 +1,53 @@
-import './Menu.css'
-import { useState } from 'react'
+import './Menu.css';
+import { LevelsEnum } from '../../types/enums/enums';
 
 interface MenuProps {
-    setLevel: (level: string) => void;
+  setLevel: (level: LevelsEnum) => void;
+  startGame: () => void;
+  level: LevelsEnum;
 }
 
 const LEVELS = {
-    easy: 'Лёгкий',
-    medium: 'Средний',
-    hard: 'Сложный',
-}
+  [LevelsEnum.easy]: 'Простой',
+  [LevelsEnum.medium]: 'Средний',
+  [LevelsEnum.hard]: 'Сложный',
+};
 
-function Menu(props: MenuProps) {
-    const [state, setState] = useState({ level: '' });
-
-    const setLevel = props.setLevel;
-
-    const handleSetLevel = (level: string) => {
-        setState({ level });
-    }
-
-    const handleButton = () => {
-        setLevel(state.level);
-        setState({ level: '' });
-    }
-
-    const buttons = Object.entries(LEVELS).map(([key, value]) => {
-        return (
-            <button
-                key={key}
-                className={`buttonLevel ${state.level === key ? 'active' : ''}`}
-                onClick={() => handleSetLevel(key)}
-            >
-                {value}
-            </button>
-        )
-    });
-
+function Menu({ setLevel, startGame, level }: MenuProps) {
+  const buttons = Object.entries(LEVELS).map(([key, value]) => {
     return (
-        <div className='menu'>
-            <div>
-                <h1 className='header'>Выберите уровень сложности:</h1>
-                <h2 className='headerSecond'>Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт. </h2>
-            </div>
-            <div className='buttonsLevel'>
-                {buttons}
-            </div>
-            <button className='startButton' onClick={handleButton}>Начать игру</button>
-        </div>
+      <button
+        key={key}
+        className={`buttonLevel ${level === key ? 'active' : ''}`}
+        onClick={() => setLevel(key as LevelsEnum)}
+      >
+        {value}
+      </button>
     );
+  });
+
+  return (
+    <div className="menu">
+      <div>
+        <h1 className="header">Выберите уровень сложности:</h1>
+        <h2 className="description">
+          Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт.
+        </h2>
+      </div>
+      <div>
+        <div className="buttonsLevel"> {buttons} </div>
+      </div>
+      <div className="startButtonContainer">
+        <button className="startButton" onClick={startGame}>
+          Начать игру
+        </button>
+      </div>
+      <div className="menuCardsContainer">
+        <div className="menuCard"></div>
+        <div className="menuCard moreRotated"></div>
+      </div>
+    </div>
+  );
 }
 
 export default Menu;
